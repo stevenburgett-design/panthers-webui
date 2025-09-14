@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panthers Schedule Editor (Mobile-Friendly)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>🏈 Panthers Schedule Editor</h1>
+    <p class="subtitle">Mobile-friendly Gist updater • Your token stays in this page only (not saved)</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2 class="card-title">Gist Settings</h2>
+      <div class="grid grid-2">
+        <label class="field">
+          <span>Gist ID</span>
+          <input id="gistId" type="text" placeholder="e.g. a1b2c3d4e5f6..." autocomplete="off" />
+        </label>
+        <label class="field">
+          <span>GitHub Token</span>
+          <input id="token" type="password" placeholder="ghp_..." autocomplete="off" />
+        </label>
+      </div>
+      <div class="grid grid-2">
+        <label class="field">
+          <span>Filename</span>
+          <input id="filename" type="text" value="mount-morris-panthers-schedule.json" />
+        </label>
+        <label class="field">
+          <span>Year</span>
+          <select id="year"></select>
+        </label>
+      </div>
+      <div class="row gap">
+        <button id="btnLoad" class="btn">Load from Gist</button>
+        <button id="btnSave" class="btn btn-primary">Save to Gist</button>
+        <button id="btnClear" class="btn btn-ghost">Clear All</button>
+      </div>
+      <p id="status" class="status" aria-live="polite"></p>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">Pick Day</h2>
+      <div class="grid grid-2">
+        <label class="field">
+          <span>Month</span>
+          <select id="month"></select>
+        </label>
+        <label class="field">
+          <span>Day</span>
+          <select id="day"></select>
+        </label>
+      </div>
+      <div class="helper">When you change Month/Day, the form below tries to load an existing event for that date (if found), otherwise it starts blank.</div>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">Event Details</h2>
+      <div class="grid grid-2">
+        <label class="field">
+          <span>Type</span>
+          <select id="type">
+            <option value="">— Select —</option>
+            <option value="game">Game</option>
+            <option value="practice">Practice</option>
+            <option value="meeting">Meeting</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>VS (Label)</span>
+          <input id="label" type="text" placeholder="e.g., vs Tigers, Scrimmage, etc." />
+        </label>
+
+        <label class="field">
+          <span>Time</span>
+          <input id="time" type="time" />
+        </label>
+
+        <label class="field" id="locationFieldText">
+          <span>Location</span>
+          <input id="locationText" type="text" placeholder="Field / Address" />
+        </label>
+
+        <label class="field hidden" id="locationFieldPractice">
+          <span>Practice Location</span>
+          <select id="locationSelect">
+            <option value="">— Select —</option>
+            <option value="High School">High School</option>
+            <option value="Jr. High">Jr. High</option>
+          </select>
+        </label>
+
+        <label class="field full">
+          <span>Notes</span>
+          <textarea id="notes" rows="3" placeholder="Optional notes…"></textarea>
+        </label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">Preview / Raw</h2>
+      <pre id="preview" class="preview"></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Last updated field will auto-bump on save • Built for quick edits on mobile • v1.0</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
