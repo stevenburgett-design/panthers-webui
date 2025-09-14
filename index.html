@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panthers Schedule Editor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🏈 Panthers Schedule Editor</h1>
+
+  <div class="input-block">
+    <label for="gistId">Gist ID:</label>
+    <input type="text" id="gistId" placeholder="Paste your Gist ID here">
+  </div>
+
+  <div class="input-block">
+    <label for="token">GitHub Token:</label>
+    <input type="password" id="token" placeholder="Paste your GitHub Token here">
+  </div>
+
+  <div class="controls">
+    <button onclick="loadGist()">📂 Load Gist</button>
+    <button onclick="saveGist()">💾 Save to Gist</button>
+    <button onclick="clearForm()">🧹 Clear All</button>
+  </div>
+
+  <hr>
+
+  <div id="editor">
+    <div class="input-block">
+      <label for="month">Month:</label>
+      <select id="month"></select>
+    </div>
+    <div class="input-block">
+      <label for="day">Day:</label>
+      <select id="day"></select>
+    </div>
+    <div class="input-block">
+      <label for="type">Type:</label>
+      <input type="text" id="type" placeholder="Game / Practice">
+    </div>
+    <div class="input-block">
+      <label for="label">VS Label:</label>
+      <input type="text" id="label" placeholder="Opponent / Notes">
+    </div>
+    <div class="input-block">
+      <label for="time">Time:</label>
+      <input type="text" id="time" placeholder="e.g., 6:00 PM">
+    </div>
+    <div class="input-block">
+      <label for="location">Location:</label>
+      <input type="text" id="location" placeholder="High School / Jr. High">
+    </div>
+    <div class="input-block">
+      <label for="notes">Notes:</label>
+      <input type="text" id="notes" placeholder="Optional notes">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
